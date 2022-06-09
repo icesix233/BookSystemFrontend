@@ -17,7 +17,7 @@ export function Login() {
       >
         {/* begin::Heading */}
         <div className='text-center mb-10'>
-          <h1 className='text-dark mb-3'>登录到图书管理系统</h1>
+          <h1 className='text-dark mb-3'>账号登录</h1>
           <div className='text-gray-400 fw-bold fs-4'>
             第一次使用？{' '}
             <Link to='/auth/registration' className='link-primary fw-bolder'>

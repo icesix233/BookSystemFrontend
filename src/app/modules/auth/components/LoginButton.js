@@ -1,4 +1,3 @@
-import * as React from 'react';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
@@ -6,14 +5,25 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import {Link} from 'react-router-dom';
+import {useState, useEffect} from 'react';
+import Axios from 'axios';
 
 function LoginButton(props){
-    const [open, setOpen] = React.useState(false);
+    const [open, setOpen] = useState(false);
+    const [user, setUser] = useState([]);
+
+    useEffect(()=>{
+        Axios.get("http://localhost:3022/api/user/get").then((res) => {
+          setUser(res.data);
+        })
+    }, [])
 
     const tryToLogin = () => {
-        if (props.userName === '1' && props.password === '1'){
-            handleClickOpen();
-        }
+        user.forEach((value, key) => {
+            if (value.userName === props.userName && value.userPassword === props.password){
+                handleClickOpen();
+            }
+        })
     }
 
     const handleClickOpen = () => {
@@ -40,15 +50,15 @@ function LoginButton(props){
         aria-describedby="alert-dialog-description"
         >
         <DialogTitle id="alert-dialog-title">
-            {"Use Google's location service?"}
+            {"登录成功"}
         </DialogTitle>
         <DialogContent>
             <DialogContentText id="alert-dialog-description">
-            登录成功，欢迎{props.userName}进入系统。请点击继续按钮。
+            欢迎{props.userName}进入系统。请点击继续按钮。
             </DialogContentText>
         </DialogContent>
         <DialogActions>
-            <Button onClick={handleClose}>推出</Button>
+            <Button onClick={handleClose}>退出</Button>
             <Link to="/dashboard" className="btn btn-primary">继续</Link>
         </DialogActions>
         </Dialog>
