@@ -2,17 +2,11 @@
 import {useState} from 'react'
 import clsx from 'clsx'
 import {Link} from 'react-router-dom'
-
+import LoginButton from './LoginButton'
 
 export function Login() {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
-
-  const tryToLogin = () => {
-    if (userName === '1' && password === '1'){
-      console.log("success");
-    }
-  }
 
   return (
     <div>
@@ -67,13 +61,7 @@ export function Login() {
       </form>
 
       <div className='text-center'>
-        <button
-          type='submit'
-          id='kt_sign_in_submit'
-          className='btn btn-lg btn-primary w-100 mb-5'
-        >
-          <span className='indicator-label' onClick={tryToLogin}>继续</span>
-        </button>
+        <LoginButton userName={userName} password={password}/>
       </div>
     </div>
   )
