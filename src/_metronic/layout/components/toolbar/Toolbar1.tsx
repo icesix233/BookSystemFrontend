@@ -23,7 +23,7 @@ const Toolbar1: FC = () => {
           <div className='me-4'>
             {/* begin::Menu */}
             <a
-              href='#'
+              href='/booklist'
               className='btn btn-sm btn-flex btn-light btn-active-primary fw-bolder'
               data-kt-menu-trigger='click'
               data-kt-menu-placement='bottom-end'
@@ -33,7 +33,7 @@ const Toolbar1: FC = () => {
                 path='/media/icons/duotune/general/gen031.svg'
                 className='svg-icon-5 svg-icon-gray-500 me-1'
               />
-              Filter
+              寻找图书
             </a>
 
             {/* end::Menu */}
@@ -43,13 +43,13 @@ const Toolbar1: FC = () => {
           {/* begin::Button */}
 
           <a
-            href='#'
+            href='/bookadd'
             className='btn btn-sm btn-primary'
             data-bs-toggle='modal'
             data-bs-target='#kt_modal_create_app'
             id='kt_toolbar_primary_button'
           >
-            Create
+            添加图书
           </a>
           {/* end::Button */}
         </div>

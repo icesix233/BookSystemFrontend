@@ -15,7 +15,7 @@ export function AsideMenuMain() {
         fontIcon='bi-app-indicator'
       />
       <AsideMenuItem
-        to='/builder'
+        to='/auth'
         icon='/media/icons/duotune/general/gen019.svg'
         title='退出登录'
         fontIcon='bi-layers'
@@ -47,6 +47,7 @@ export function AsideMenuMain() {
         <AsideMenuItem to='/crafted/account/overview' title='借阅总览' hasBullet={true} />
         <AsideMenuItem to='/crafted/account/settings' title='借阅日志' hasBullet={true} />
       </AsideMenuItemWithSub>
+      {/*
       <AsideMenuItemWithSub
         to='/error'
         title='Errors'
@@ -69,6 +70,7 @@ export function AsideMenuMain() {
         <AsideMenuItem to='/crafted/widgets/tables' title='Tables' hasBullet={true} />
         <AsideMenuItem to='/crafted/widgets/feeds' title='Feeds' hasBullet={true} />
       </AsideMenuItemWithSub>
+      */}
       <div className='menu-item'>
         <div className='menu-content pt-8 pb-2'>
           <span className='menu-section text-muted text-uppercase fs-8 ls-1'>图书借阅</span>
@@ -99,12 +101,12 @@ export function AsideMenuMain() {
         <a
           target='_blank'
           className='menu-link'
-          href={process.env.REACT_APP_PREVIEW_DOCS_URL + '/docs/changelog'}
+          href="https://github.com/icesix233/BookSystemFrontend"
         >
           <span className='menu-icon'>
             <KTSVG path='/media/icons/duotune/general/gen005.svg' className='svg-icon-2' />
           </span>
-          <span className='menu-title'>Changelog {process.env.REACT_APP_VERSION}</span>
+          <span className='menu-title'>Github Page</span>
         </a>
       </div>
     </>

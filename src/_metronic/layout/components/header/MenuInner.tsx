@@ -1,22 +1,21 @@
-import React from 'react'
 import {MenuItem} from './MenuItem'
 import {MenuInnerWithSub} from './MenuInnerWithSub'
 import {MegaMenu} from './MegaMenu'
-import {useIntl} from 'react-intl'
 
 export function MenuInner() {
-  const intl = useIntl()
   return (
     <>
-      <MenuItem title={intl.formatMessage({id: 'MENU.DASHBOARD'})} to='/dashboard' />
-      <MenuItem title='Layout Builder' to='/builder' />
+      <MenuItem title='主页' to='/dashboard' />
+      <MenuItem title='退出登录' to='/auth' />
+      <MenuItem title='图书列表' to='/booklist' />
+      {/*
       <MenuInnerWithSub
         title='Crafted'
         to='/crafted'
         menuPlacement='bottom-start'
         menuTrigger='click'
       >
-        {/* PAGES */}
+
         <MenuInnerWithSub
           title='Pages'
           to='/crafted/pages'
@@ -56,7 +55,7 @@ export function MenuInner() {
           </MenuInnerWithSub>
         </MenuInnerWithSub>
 
-        {/* ACCOUNT */}
+
         <MenuInnerWithSub
           title='Accounts'
           to='/crafted/accounts'
@@ -69,7 +68,7 @@ export function MenuInner() {
           <MenuItem to='/crafted/account/settings' title='Settings' hasBullet={true} />
         </MenuInnerWithSub>
 
-        {/* ERRORS */}
+
         <MenuInnerWithSub
           title='Errors'
           to='/error'
@@ -82,7 +81,7 @@ export function MenuInner() {
           <MenuItem to='/error/500' title='Error 500' hasBullet={true} />
         </MenuInnerWithSub>
 
-        {/* Widgets */}
+
         <MenuInnerWithSub
           title='Widgets'
           to='/crafted/widgets'
@@ -101,7 +100,7 @@ export function MenuInner() {
       </MenuInnerWithSub>
 
       <MenuInnerWithSub title='Apps' to='/apps' menuPlacement='bottom-start' menuTrigger='click'>
-        {/* PAGES */}
+
         <MenuInnerWithSub
           title='Chat'
           to='/apps/chat'
@@ -121,9 +120,11 @@ export function MenuInner() {
         />
       </MenuInnerWithSub>
 
+      */}
+
       <MenuInnerWithSub
         isMega={true}
-        title='Mega menu'
+        title='项目源码'
         to='/mega-menu'
         menuPlacement='bottom-start'
         menuTrigger='click'
