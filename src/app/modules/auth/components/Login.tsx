@@ -8,6 +8,8 @@ export function Login() {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
 
+  //const {isManager, setIsManger} = useContext(isManagerContext);
+
   return (
     <div>
       <form

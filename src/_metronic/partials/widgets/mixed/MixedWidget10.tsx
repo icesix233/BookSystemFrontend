@@ -1,7 +1,8 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, {useEffect, useRef} from 'react'
+import React, {useEffect, useState, useRef} from 'react'
 import ApexCharts, {ApexOptions} from 'apexcharts'
 import {getCSSVariableValue} from '../../../assets/ts/_utils'
+import Axios from 'axios';
 
 type Props = {
   className: string
@@ -10,6 +11,14 @@ type Props = {
 }
 
 const MixedWidget10: React.FC<Props> = ({className, chartColor, chartHeight}) => {
+  const [readerNum, setReaderNum] = useState(0);
+
+  useEffect(()=>{
+    Axios.get("http://localhost:3022/api/user/get").then((res) => {
+      setReaderNum(res.data.length);
+    })
+  }, [])
+
   const chartRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
@@ -39,13 +48,13 @@ const MixedWidget10: React.FC<Props> = ({className, chartColor, chartHeight}) =>
           <div className='d-flex flex-stack flex-wrap'>
             <div className='me-2'>
               <a href='#' className='text-dark text-hover-primary fw-bolder fs-3'>
-                Generate Reports
+                读者总数
               </a>
 
-              <div className='text-muted fs-7 fw-bold'>Finance and accounting reports</div>
+              <div className='text-muted fs-7 fw-bold'>书籍是人类进步的阶梯</div>
             </div>
 
-            <div className={`fw-bolder fs-3 text-${chartColor}`}>$24,500</div>
+            <div className={`fw-bolder fs-3 text-${chartColor}`}>{readerNum}</div>
           </div>
         </div>
         {/* end::Stats */}

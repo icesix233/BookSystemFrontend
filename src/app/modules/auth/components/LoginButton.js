@@ -5,16 +5,20 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import {Link} from 'react-router-dom';
-import {useState, useEffect} from 'react';
+import {useState, useEffect, useContext} from 'react';
 import Axios from 'axios';
+import {isManagerContext} from '../../../pages/UserContext';
 
 function LoginButton(props){
     const [open, setOpen] = useState(false);
     const [user, setUser] = useState([]);
 
+    const {isManager, setIsManager} = useContext(isManagerContext);
+
     useEffect(()=>{
         Axios.get("http://localhost:3022/api/user/get").then((res) => {
           setUser(res.data);
+          console.log(res.data);
         })
     }, [])
 
@@ -22,6 +26,13 @@ function LoginButton(props){
         user.forEach((value, key) => {
             if (value.userName === props.userName && value.userPassword === props.password){
                 handleClickOpen();
+                if (value.isManager === 1){
+                    setIsManager(true);
+                    console.log("set IsManger to True, before :", isManager, key);
+                } else {
+                    setIsManager(false);
+                    console.log("set IsManger to False, before :", isManager, key);
+                }
             }
         })
     }

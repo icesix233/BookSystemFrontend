@@ -20,6 +20,10 @@ import './_metronic/assets/sass/style.scss'
 import './_metronic/assets/sass/style.react.scss'
 import {AppRoutes} from './app/routing/AppRoutes'
 import {AuthProvider, setupAxios} from './app/modules/auth'
+
+import { isManagerContext } from './app/pages/UserContext'
+import { useState } from 'react'
+
 /**
  * Creates `axios-mock-adapter` instance for provided `axios` instance, add
  * basic Metronic mocks and returns it.
@@ -38,12 +42,24 @@ Chart.register(...registerables)
 
 const queryClient = new QueryClient()
 
+const AppContextProvider: React.FC = ({ children, ...props }) => {
+  const [isManager, setIsManager] = useState(false);
+
+  return (
+    <isManagerContext.Provider value={{isManager, setIsManager}}>
+      {children}
+    </isManagerContext.Provider>
+  );
+};
+
 ReactDOM.render(
   <QueryClientProvider client={queryClient}>
     <MetronicI18nProvider>
-      <AuthProvider>
-        <AppRoutes />
-      </AuthProvider>
+        <AuthProvider>
+          <AppContextProvider>
+          <AppRoutes />
+          </AppContextProvider>
+        </AuthProvider>
     </MetronicI18nProvider>
     <ReactQueryDevtools initialIsOpen={false} />
   </QueryClientProvider>,

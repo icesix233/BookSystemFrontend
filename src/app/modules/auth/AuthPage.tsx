@@ -49,6 +49,7 @@ const AuthLayout = () => {
 }
 
 const AuthPage = () => (
+  
   <Routes>
     <Route element={<AuthLayout />}>
       <Route path='login' element={<Login />} />

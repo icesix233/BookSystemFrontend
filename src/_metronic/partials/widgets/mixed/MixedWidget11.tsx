@@ -37,12 +37,12 @@ const MixedWidget11: React.FC<Props> = ({className, chartColor, chartHeight}) =>
         {/* begin::Hidden */}
         <div className='d-flex flex-stack flex-wrap flex-grow-1 px-9 pt-9 pb-3'>
           <div className='me-2'>
-            <span className='fw-bolder text-gray-800 d-block fs-3'>Sales</span>
+            <span className='fw-bolder text-gray-800 d-block fs-3'>图书销售额</span>
 
-            <span className='text-gray-400 fw-bold'>Oct 8 - Oct 26 2021</span>
+            <span className='text-gray-400 fw-bold'>2022年内</span>
           </div>
 
-          <div className={`fw-bolder fs-3 text-${chartColor}`}>$15,300</div>
+          <div className={`fw-bolder fs-3 text-${chartColor}`}>￥15,300</div>
         </div>
         {/* end::Hidden */}
 

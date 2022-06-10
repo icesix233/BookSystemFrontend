@@ -6,7 +6,7 @@ import { BookAddToolbar } from '../../../../app/modules/apps/user-management/use
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import EditBookButton from './EditBookButtom';
+import EditBookButton from './EditBookButton';
 
 type Props = {
   className: string
