@@ -2,7 +2,6 @@
 import React, {useState, useEffect, useContext} from 'react'
 import {toAbsoluteUrl} from '../../../helpers'
 import Axios from "axios";
-import { BookAddToolbar } from '../../../../app/modules/apps/user-management/users-list/components/header/BookAddToolbar';
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
@@ -66,11 +65,6 @@ const BookSaleWidget = (props) => {
         <span className='fw-bolder text-dark'>图书总览</span>
     </h3>
     </div>
-        {/* begin::Header */}
-        <div className='card-toolbar'>
-        <BookAddToolbar />
-        </div>
-        {/* end::Header */}
         {/* begin::Body */}
         <div className='card-body pt-3'>
         {bookList.map((book, key) => {

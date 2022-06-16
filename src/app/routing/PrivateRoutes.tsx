@@ -10,6 +10,8 @@ import {BookAdd} from "../pages/BookAdd"
 import {BookSale} from "../pages/BookSale"
 import {UserManagePage} from "../pages/UserManagePage"
 import {MyBook} from "../pages/MyBook"
+import {ManageSale} from "../pages/ManageSale"
+import {ManageRent} from "../pages/ManageRent"
 
 const PrivateRoutes = () => {
   const BuilderPageWrapper = lazy(() => import('../pages/layout-builder/BuilderPageWrapper'))
@@ -31,6 +33,8 @@ const PrivateRoutes = () => {
         <Route path="/booksale" element={<BookSale />} />
         <Route path="/mybook" element={<MyBook />} />
         <Route path="/users" element={<UserManagePage />} />
+        <Route path="/managesale" element={<ManageSale />} />
+        <Route path="/managerent" element={<ManageRent />} />
         <Route path='dashboard' element={<DashboardWrapper />} />
         <Route path='builder' element={<BuilderPageWrapper />} />
         <Route path='menu-test' element={<MenuTestPage />} />

@@ -40,19 +40,17 @@ export function AsideMenuMain() {
         >
           <AsideMenuItem to='/booklist' title='图书总览' hasBullet={true} />
           <AsideMenuItem to='/bookadd' title='图书管理' hasBullet={true} />
-          <AsideMenuItem to='/crafted/pages/profile/campaigns' title='类别管理' hasBullet={true} />
-          <AsideMenuItem to='/crafted/pages/profile/documents' title='日志管理' hasBullet={true} />
 
 
         </AsideMenuItemWithSub>
         <AsideMenuItemWithSub
           to='/crafted/accounts'
-          title='借阅管理'
+          title='用户服务'
           icon='/media/icons/duotune/communication/com001.svg'
           fontIcon='bi-person'
         >
-          <AsideMenuItem to='/crafted/account/overview' title='借阅总览' hasBullet={true} />
-          <AsideMenuItem to='/crafted/account/settings' title='借阅日志' hasBullet={true} />
+          <AsideMenuItem to='/managerent' title='图书借阅' hasBullet={true} />
+          <AsideMenuItem to='/managesale' title='图书售卖' hasBullet={true} />
         </AsideMenuItemWithSub>
         <AsideMenuItemWithSub
           to='/error'
@@ -77,11 +75,6 @@ export function AsideMenuMain() {
           <AsideMenuItem to='/crafted/widgets/feeds' title='Feeds' hasBullet={true} />
         </AsideMenuItemWithSub>
         */}
-        <div className='menu-item'>
-          <div className='menu-content pt-8 pb-2'>
-            <span className='menu-section text-muted text-uppercase fs-8 ls-1'>图书借阅</span>
-          </div>
-        </div>
         <div className='menu-item'>
           <div className='menu-content'>
             <div className='separator mx-1 my-4'></div>
