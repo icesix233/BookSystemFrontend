@@ -23,7 +23,7 @@ const Toolbar1: FC = () => {
           <div className='me-4'>
             {/* begin::Menu */}
             <a
-              href='/booklist'
+              href='#'
               className='btn btn-sm btn-flex btn-light btn-active-primary fw-bolder'
               data-kt-menu-trigger='click'
               data-kt-menu-placement='bottom-end'
@@ -43,7 +43,7 @@ const Toolbar1: FC = () => {
           {/* begin::Button */}
 
           <a
-            href='/bookadd'
+            href='#'
             className='btn btn-sm btn-primary'
             id='kt_toolbar_primary_button'
           >
