@@ -82,22 +82,6 @@ export function AsideMenuMain() {
             <span className='menu-section text-muted text-uppercase fs-8 ls-1'>图书借阅</span>
           </div>
         </div>
-        <AsideMenuItemWithSub
-          to='/apps/chat'
-          title='浏览图书'
-          fontIcon='bi-chat-left'
-          icon='/media/icons/duotune/communication/com012.svg'
-        >
-          <AsideMenuItem to='/apps/chat/private-chat' title='按类别' hasBullet={true} />
-          <AsideMenuItem to='/apps/chat/group-chat' title='按名字' hasBullet={true} />
-          <AsideMenuItem to='/apps/chat/drawer-chat' title='按人气' hasBullet={true} />
-        </AsideMenuItemWithSub>
-        <AsideMenuItem
-          to='/apps/user-management/users'
-          icon='/media/icons/duotune/general/gen051.svg'
-          title='我的借阅'
-          fontIcon='bi-layers'
-        />
         <div className='menu-item'>
           <div className='menu-content'>
             <div className='separator mx-1 my-4'></div>
@@ -130,9 +114,9 @@ export function AsideMenuMain() {
           fontIcon='bi-layers'
         />
         <AsideMenuItem
-          to='/booklist'
+          to='/mybook'
           icon='/media/icons/duotune/general/gen051.svg'
-          title='我的借阅'
+          title='我的图书'
           fontIcon='bi-layers'
         />
         <div className='menu-item'>

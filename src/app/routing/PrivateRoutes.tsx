@@ -9,6 +9,7 @@ import {BookList} from "../pages/BookList"
 import {BookAdd} from "../pages/BookAdd"
 import {BookSale} from "../pages/BookSale"
 import {UserManagePage} from "../pages/UserManagePage"
+import {MyBook} from "../pages/MyBook"
 
 const PrivateRoutes = () => {
   const BuilderPageWrapper = lazy(() => import('../pages/layout-builder/BuilderPageWrapper'))
@@ -28,6 +29,7 @@ const PrivateRoutes = () => {
         <Route path="/booklist" element={<BookList />} />
         <Route path="/bookadd" element={<BookAdd />} />
         <Route path="/booksale" element={<BookSale />} />
+        <Route path="/mybook" element={<MyBook />} />
         <Route path="/users" element={<UserManagePage />} />
         <Route path='dashboard' element={<DashboardWrapper />} />
         <Route path='builder' element={<BuilderPageWrapper />} />
