@@ -21,7 +21,7 @@ import './_metronic/assets/sass/style.react.scss'
 import {AppRoutes} from './app/routing/AppRoutes'
 import {AuthProvider, setupAxios} from './app/modules/auth'
 
-import { isManagerContext } from './app/pages/UserContext'
+import { isManagerContext, userIDContext } from './app/pages/UserContext'
 import { useState } from 'react'
 
 /**
@@ -44,10 +44,13 @@ const queryClient = new QueryClient()
 
 const AppContextProvider: React.FC = ({ children, ...props }) => {
   const [isManager, setIsManager] = useState(false);
+  const [userID, setUserID] = useState(false);
 
   return (
     <isManagerContext.Provider value={{isManager, setIsManager}}>
-      {children}
+      <userIDContext.Provider value={{userID, setUserID}} >
+        {children}
+      </userIDContext.Provider>
     </isManagerContext.Provider>
   );
 };

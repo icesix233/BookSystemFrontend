@@ -1,23 +1,21 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useContext} from 'react'
 import {toAbsoluteUrl} from '../../../helpers'
 import Axios from "axios";
 import { BookAddToolbar } from '../../../../app/modules/apps/user-management/users-list/components/header/BookAddToolbar';
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import EditBookButton from './EditBookButton';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
+import {userIDContext} from "../../../../app/pages/UserContext";
+import RentBookButton from './RentBookButton';
 
-type Props = {
-  className: string
-}
-
-const BookSaleWidget: React.FC<Props> = ({className}) => {
+const BookSaleWidget = (props) => {
+    const {userID} = useContext(userIDContext);
 
     /* 菜单相关 */
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -25,7 +23,7 @@ const BookSaleWidget: React.FC<Props> = ({className}) => {
     const [selectedBookID, setSelectedBookID] = React.useState("");
     const [selectedBookPrice, setSelectedBookPrice] = React.useState("");
     const open = Boolean(anchorEl);
-    const handleClick = (e: any) => {
+    const handleClick = (e) => {
         setAnchorEl(e.currentTarget);
     };
     const handleClose = () => {
@@ -34,7 +32,7 @@ const BookSaleWidget: React.FC<Props> = ({className}) => {
 
     const buyBook = () => {
         handleClose();
-        Axios.post("http://localhost:3022/api/sale/add", {bookID: selectedBookID, userID: 10, price: selectedBookPrice}).then(()=>{
+        Axios.post("http://localhost:3022/api/sale/add", {bookID: selectedBookID, userID: userID, price: selectedBookPrice}).then(()=>{
             console.log("successful buy");
         })
     }
@@ -124,7 +122,7 @@ const BookSaleWidget: React.FC<Props> = ({className}) => {
                         'aria-labelledby': 'basic-button',
                         }}
                     >
-                        <EditBookButton book={selectedBook}/>
+                        <RentBookButton book={selectedBook}/>
                         <MenuItem onClick={() => {buyBook();handledClickOpen();}}>购买</MenuItem>
                     </Menu>
                     {/* end::menu button */}

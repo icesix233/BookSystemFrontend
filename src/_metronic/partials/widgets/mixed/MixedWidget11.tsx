@@ -1,7 +1,8 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, {useEffect, useRef} from 'react'
+import React, {useEffect, useState, useRef} from 'react'
 import ApexCharts, {ApexOptions} from 'apexcharts'
 import {getCSSVariableValue} from '../../../assets/ts/_utils'
+import Axios from 'axios';
 
 type Props = {
   className: string
@@ -10,9 +11,14 @@ type Props = {
 }
 
 const MixedWidget11: React.FC<Props> = ({className, chartColor, chartHeight}) => {
+  const [saleNum, setSaleNum] = useState(0);
   const chartRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
+    Axios.get("http://localhost:3022/api/sale/getTotal").then((res) => {
+      setSaleNum(res.data[0]['sum(price)']);
+    })
+    
     if (!chartRef.current) {
       return
     }
@@ -42,7 +48,7 @@ const MixedWidget11: React.FC<Props> = ({className, chartColor, chartHeight}) =>
             <span className='text-gray-400 fw-bold'>2022年内</span>
           </div>
 
-          <div className={`fw-bolder fs-3 text-${chartColor}`}>￥15,300</div>
+          <div className={`fw-bolder fs-3 text-${chartColor}`}>￥{saleNum}</div>
         </div>
         {/* end::Hidden */}
 

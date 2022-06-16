@@ -7,13 +7,14 @@ import DialogTitle from '@mui/material/DialogTitle';
 import {Link} from 'react-router-dom';
 import {useState, useEffect, useContext} from 'react';
 import Axios from 'axios';
-import {isManagerContext} from '../../../pages/UserContext';
+import {isManagerContext, userIDContext} from '../../../pages/UserContext';
 
 function LoginButton(props){
     const [open, setOpen] = useState(false);
     const [user, setUser] = useState([]);
 
-    const {isManager, setIsManager} = useContext(isManagerContext);
+    const {setIsManager} = useContext(isManagerContext);
+    const {setUserID} = useContext(userIDContext);
 
     useEffect(()=>{
         Axios.get("http://localhost:3022/api/user/get").then((res) => {
@@ -28,10 +29,10 @@ function LoginButton(props){
                 handleClickOpen();
                 if (value.isManager === 1){
                     setIsManager(true);
-                    console.log("set IsManger to True, before :", isManager, key);
+                    setUserID(value.id);
                 } else {
                     setIsManager(false);
-                    console.log("set IsManger to False, before :", isManager, key);
+                    setUserID(value.id);
                 }
             }
         })
