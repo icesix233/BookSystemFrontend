@@ -20,6 +20,7 @@ const BookSaleWidget = (props) => {
     /* 菜单相关 */
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [selectedBook, setSelectedBook] = React.useState({});
+    const [selectedBookName, setSelectedBookName] = React.useState({});
     const [selectedBookID, setSelectedBookID] = React.useState("");
     const [selectedBookPrice, setSelectedBookPrice] = React.useState("");
     const open = Boolean(anchorEl);
@@ -32,7 +33,7 @@ const BookSaleWidget = (props) => {
 
     const buyBook = () => {
         handleClose();
-        Axios.post("http://localhost:3022/api/sale/add", {bookID: selectedBookID, userID: userID, price: selectedBookPrice}).then(()=>{
+        Axios.post("http://localhost:3022/api/sale/add", {bookID: selectedBookID, bookName: selectedBookName, userID: userID, price: selectedBookPrice, time: '2022-06-17'}).then(()=>{
             console.log("successful buy");
         })
     }
@@ -109,7 +110,7 @@ const BookSaleWidget = (props) => {
                         aria-controls={open ? 'basic-menu' : undefined}
                         aria-haspopup="true"
                         aria-expanded={open ? 'true' : undefined}
-                        onClick={(e) => {handleClick(e); setSelectedBook(book); setSelectedBookID(book['id']); setSelectedBookPrice(book['price'])}}
+                        onClick={(e) => {handleClick(e); setSelectedBook(book); setSelectedBookName(book['bookName']) ;setSelectedBookID(book['id']); setSelectedBookPrice(book['price'])}}
                     >
                         选择
                     </Button>

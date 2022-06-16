@@ -43,6 +43,8 @@ function RentBookButton(props) {
 
         Axios.post("http://localhost:3022/api/rent/add", {
             bookID: props.book.id,
+            bookName: props.book.bookName,
+            price: props.book.price,
             userID: userID,
             startTime: startTime,
             endTime: endTime

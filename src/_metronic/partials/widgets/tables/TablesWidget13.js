@@ -45,7 +45,7 @@ const TablesWidget13 = (props) => {
                   </div>
                 </th>
                 <th className='min-w-150px'>借阅编号</th>
-                <th className='min-w-140px'>图书编号</th>
+                <th className='min-w-140px'>图书名</th>
                 <th className='min-w-120px'>开始时间</th>
                 <th className='min-w-120px'>结束时间</th>
                 <th className='min-w-120px'>图书价值</th>
@@ -71,8 +71,9 @@ const TablesWidget13 = (props) => {
                     </td>
                     <td>
                       <a href='#' className='text-dark fw-bolder text-hover-primary d-block mb-1 fs-6'>
-                        {rent.bookID}
+                        {rent.bookName}
                       </a>
+                      <span className='text-muted fw-bold text-muted d-block fs-7'>ID: {rent.bookID}</span>
                     </td>
                     <td>
                       <a href='#' className='text-dark fw-bolder text-hover-primary d-block mb-1 fs-6'>
