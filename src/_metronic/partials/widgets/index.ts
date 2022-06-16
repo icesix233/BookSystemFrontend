@@ -29,6 +29,7 @@ export * from './lists/ListsWidget7'
 export * from './lists/ListsWidget8'
 export * from './lists/BookListWidget'
 export * from './lists/BookAddWidget'
+export * from './lists/BookSaleWidget'
 export * from './lists/UsersWidget'
 
 // statistics

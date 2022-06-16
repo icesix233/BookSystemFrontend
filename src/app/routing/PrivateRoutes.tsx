@@ -7,6 +7,7 @@ import {MenuTestPage} from '../pages/MenuTestPage'
 import {getCSSVariableValue} from '../../_metronic/assets/ts/_utils'
 import {BookList} from "../pages/BookList"
 import {BookAdd} from "../pages/BookAdd"
+import {BookSale} from "../pages/BookSale"
 import {UserManagePage} from "../pages/UserManagePage"
 
 const PrivateRoutes = () => {
@@ -26,6 +27,7 @@ const PrivateRoutes = () => {
         {/* Pages */}
         <Route path="/booklist" element={<BookList />} />
         <Route path="/bookadd" element={<BookAdd />} />
+        <Route path="/booksale" element={<BookSale />} />
         <Route path="/users" element={<UserManagePage />} />
         <Route path='dashboard' element={<DashboardWrapper />} />
         <Route path='builder' element={<BuilderPageWrapper />} />

@@ -123,16 +123,12 @@ export function AsideMenuMain() {
             <span className='menu-section text-muted text-uppercase fs-8 ls-1'>图书借阅</span>
           </div>
         </div>
-        <AsideMenuItemWithSub
-          to='/apps/chat'
+        <AsideMenuItem
+          to='/booksale'
+          icon='/media/icons/duotune/general/gen051.svg'
           title='浏览图书'
-          fontIcon='bi-chat-left'
-          icon='/media/icons/duotune/communication/com012.svg'
-        >
-          <AsideMenuItem to='/booklist' title='按类别' hasBullet={true} />
-          <AsideMenuItem to='/booklist' title='按名字' hasBullet={true} />
-          <AsideMenuItem to='/booklist' title='按人气' hasBullet={true} />
-        </AsideMenuItemWithSub>
+          fontIcon='bi-layers'
+        />
         <AsideMenuItem
           to='/booklist'
           icon='/media/icons/duotune/general/gen051.svg'
