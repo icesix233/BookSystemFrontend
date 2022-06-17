@@ -52,8 +52,9 @@ function LoginButton(props){
           type='submit'
           id='kt_sign_in_submit'
           className='btn btn-lg btn-primary w-100 mb-5'
+          onClick={tryToLogin}
         >
-          <span className='indicator-label' onClick={tryToLogin}>继续</span>
+          <span className='indicator-label'>继续</span>
         </button>
         <Dialog
         open={open}

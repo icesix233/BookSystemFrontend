@@ -40,10 +40,6 @@ const UsersWidget: React.FC<Props> = ({className}) => {
         })
     }
 
-    const getRandowAvatar = () => {
-        return Math.floor(Math.random() * 30) + 1;
-    }
-
     return (
     <div className={`card ${className}`}>
         {/* begin::Header */}
@@ -59,7 +55,7 @@ const UsersWidget: React.FC<Props> = ({className}) => {
                 <div key={key} className='d-flex align-items-center mb-7'>
                     {/* begin::Avatar */}
                     <div className='symbol symbol-50px me-5'>
-                    <img src={toAbsoluteUrl(`/media/avatars/300-${getRandowAvatar()}.jpg`)} className='' alt='' />
+                    <img src={toAbsoluteUrl(`/media/avatars/300-${value['id']}.jpg`)} className='' alt='' />
                     </div>
                     {/* end::Avatar */}
                     {/* begin::Text */}
